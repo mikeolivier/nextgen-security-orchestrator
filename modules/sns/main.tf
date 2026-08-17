@@ -1,9 +1,7 @@
-
-
 resource "aws_sns_topic" "security_alerts" {
-  name = "Security-Alerts"
+  name              = "Security-Alerts"
+  kms_master_key_id = var.kms_key_arn
 }
-
 # Email Subscription
 
 resource "aws_sns_topic_subscription" "security_email" {
@@ -30,4 +28,3 @@ resource "aws_sns_topic_policy" "allow_eventbridge" {
     }]
   })
 }
-
