@@ -41,4 +41,13 @@ jobs:
         uses: bridgecrewio/checkov-action@v12
         with:
           directory: .
+          framework: 
+
+#integrate Checkov
+                - name: Run Checkov
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: .
           framework: terraform
+          quiet: true
+          output_format: cli
