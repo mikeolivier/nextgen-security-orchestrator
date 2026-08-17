@@ -4,10 +4,20 @@ module "security_user" {
   user_name = "security-test-user"
 }
 
+#kms module
+module "kms" {
+  source = "../../modules/kms"
+
+  project_name = "nextgen-security"
+}
+
+#security module
+
 module "security_alerts" {
   source = "../../modules/sns"
 
   security_email = var.security_email
+  kms_key_arn    = module.kms.kms_key_arn
 }
 
 module "security_lambda" {
