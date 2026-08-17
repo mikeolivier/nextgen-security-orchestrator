@@ -59,7 +59,7 @@ resource "aws_iam_role_policy" "forwarder_policy" {
 resource "aws_cloudwatch_event_target" "forward_to_canada" {
   provider = aws.use1
 
-  rule     = aws_cloudwatch_event_rule.iam_forwarder.name
+  rule      = aws_cloudwatch_event_rule.iam_forwarder.name
   target_id = "SendToCanada"
   arn       = aws_cloudwatch_event_bus.security_bus.arn
   role_arn  = aws_iam_role.forwarder_role.arn

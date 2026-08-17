@@ -95,7 +95,7 @@ resource "aws_s3_bucket_policy" "config_bucket_policy" {
     Statement = [
 
       {
-        Sid = "AWSConfigBucketPermissionsCheck"
+        Sid    = "AWSConfigBucketPermissionsCheck"
         Effect = "Allow"
 
         Principal = {

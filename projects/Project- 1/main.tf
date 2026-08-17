@@ -27,8 +27,8 @@ module "cloudtrail" {
 module "event_router" {
   source = "../../modules/event-router"
 
-  sns_topic_arn       = module.security_alerts.topic_arn
-  lambda_arn          = module.security_lambda.lambda_arn
+  sns_topic_arn        = module.security_alerts.topic_arn
+  lambda_arn           = module.security_lambda.lambda_arn
   lambda_function_name = module.security_lambda.lambda_function_name
 }
 
