@@ -1,3 +1,9 @@
+data "archive_file" "lambda_zip" {
+  type        = "zip"
+  source_file = "${path.module}/lambda.py"
+  output_path = "${path.module}/lambda.zip"
+}
+
 resource "aws_iam_role" "lambda_role" {
   name = "IAM-Credential-Monitor-Lambda-Role"
 
