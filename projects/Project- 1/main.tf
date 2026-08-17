@@ -31,6 +31,7 @@ module "cloudtrail" {
 
   lambda_arn           = module.security_lambda.lambda_arn
   lambda_function_name = module.security_lambda.lambda_function_name
+  kms_key_arn          = module.kms.kms_key_arn
 }
 
 

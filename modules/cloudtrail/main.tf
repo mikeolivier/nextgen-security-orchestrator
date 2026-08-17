@@ -90,6 +90,7 @@ resource "aws_cloudtrail" "security_trail" {
   is_multi_region_trail         = true
   enable_logging                = true
   enable_log_file_validation    = true
+  kms_key_id = var.kms_key_arn
 
   cloud_watch_logs_group_arn = "${aws_cloudwatch_log_group.cloudtrail_logs.arn}:*"
   cloud_watch_logs_role_arn  = aws_iam_role.cloudtrail_logs_role.arn
